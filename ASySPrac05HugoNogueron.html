@@ -1,0 +1,588 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>ASySPrac05HugoNogueron</title><meta name="generator" content="MATLAB 9.6"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2019-10-18"><meta name="DC.source" content="ASySPrac05HugoNogueron.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1></h1><!--introduction--><p><b>INSTITUTO POLIT&Eacute;CNICO NACIONAL</b></p><p><b>UNIDAD PROFESIONAL INTERDISCIPLINARIA EN INGENIER&Iacute;A Y TECNOLOG&Iacute;AS AVANZADAS</b></p><p><tt>An&aacute;lisis de Se&ntilde;ales y Sistemas</tt></p><p>Autor: Noguer&oacute;n Soto Hugo de Jes&uacute;s</p><p>Profesor: Dr. Rafael Mart&iacute;nez Mart&iacute;nez</p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Objetivos</a></li><li><a href="#2">Introducci&oacute;n</a></li><li><a href="#3">Desarrolo</a></li><li><a href="#4">Problema 1</a></li><li><a href="#6">Problema 2</a></li><li><a href="#8">Problema 3</a></li><li><a href="#10">Problema 4</a></li><li><a href="#12">Problema 5</a></li><li><a href="#14">Problema 6</a></li><li><a href="#15">Problema 7</a></li><li><a href="#17">Ap&eacute;ndices</a></li><li><a href="#18">2.</a></li><li><a href="#19">Referencias</a></li></ul></div><h2 id="1">Objetivos</h2><div><ul><li>Realizar gr&aacute;ficas de series de Fourier exponenciales y trigonom&eacute;tricas en tiempo continuo.</li></ul></div><div><ul><li>Manipulaci&oacute;n de instrucciones en MATLAB.</li></ul></div><div><ul><li>Calculo n&uacute;merico de los coeficientes de Fourier.</li></ul></div><h2 id="2">Introducci&oacute;n</h2><p>En el libro Linear Systems and Signals de B.P. Lathi cap. 6.6. Podemos observar conmo el autor hace una demostraci&oacute;n de c&oacute;mo es posible encontrar los coeficientes <img src="ASySPrac05HugoNogueron_eq09969345159538061326.png" alt="$D_{n}$"> de una serie de Foirier compleja de una forma num&eacute;rica empleando la transformada de Fourier discreta.</p><p>Tenemos una se&ntilde;al peri&oacute;dica <img src="ASySPrac05HugoNogueron_eq14833433867325483769.png" alt="$x(t)$"> a la cual le calcularemos su serie de Fourier compleja en un periodo <img src="ASySPrac05HugoNogueron_eq07389878485796935067.png" alt="$T_{0}$">, tenemos entonces que <img src="ASySPrac05HugoNogueron_eq16449583866399183903.png" alt="$N_{0}=\frac{T_{0}}{t}$"> elementos en dicho periodo. La relaci&oacute;n entre <img src="ASySPrac05HugoNogueron_eq09969345159538061326.png" alt="$D_{n}$"> y los elementos de <img src="ASySPrac05HugoNogueron_eq14833433867325483769.png" alt="$x(t)$"> podemos hallarla partiendo de la ecuaci&oacute;n: <img src="ASySPrac05HugoNogueron_eq10461058747142961556.png" alt="$D_{n}=\frac{1}{T_{0}}\int_{T_{0}}x(t)e^{-jn\omega_{0}t}dt$"></p><p>Podemos reducir a T a valores cercanos a cero, sin embargo nunca a cero. Por lo que podemos deducir la ecuaci&oacute;n.</p><p>% <img src="ASySPrac05HugoNogueron_eq01900137080499801124.png" alt="$D_{n}=\frac{1}{N_{0}}\displaystyle\sum_{k=0}^{N_{0}-1}x(kT)e^{-jn\omega_{0}t}$"></p><h2 id="3">Desarrolo</h2><h2 id="4">Problema 1</h2><p><img src="ASySPrac05HugoNogueron_eq11824749991346166048.png" alt="$T_{0}=\pi$">, <img src="ASySPrac05HugoNogueron_eq18158882472949092680.png" alt="$\omega_{0}=2rad/s$"></p><p><img src="ASySPrac05HugoNogueron_eq07669880684978862475.png" alt="$a_{0}=0.504$"></p><p><img src="ASySPrac05HugoNogueron_eq00625565354475340822.png" alt="$a_{n}=0.504(\frac{2}{1+16n^2})$"></p><p><img src="ASySPrac05HugoNogueron_eq04108984236777671564.png" alt="$b_{n}=0.504(\frac{8n}{1+16n^2})$"></p><pre class="codeinput">a0=0.504;
+an=@(n) 0.504*(2/(1+16*n^2));
+bn=@(n) 0.504*(8*n/(1+16*n^2));
+armo=4;
+a=-7;
+b=9;
+f=@(t) exp(-t/2);
+tf=pi;
+t0=0;
+sfct(t0,tf,an,bn,a0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_01.png" alt=""> <p>Para 15 arm&oacute;nicos:</p><pre class="codeinput">close <span class="string">All</span>
+armo=15;
+sfct(t0,tf,an,bn,a0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_02.png" alt=""> <h2 id="6">Problema 2</h2><p><img src="ASySPrac05HugoNogueron_eq13015103451195959840.png" alt="$D_{n}=\frac{-12jsen(\frac{n\pi}{2})}{n^2\pi^2}$"></p><pre class="codeinput">close <span class="string">All</span>
+clear <span class="string">All</span>
+f=@(t)(heaviside(t+0.5)-heaviside(t-0.5)).*(6.*t)+(heaviside(t-0.5)-heaviside(t-1.5)).*(-6.*t+6);
+dn=@(n) (-12/(n^2*pi^2))*j*(sin(n*pi/2));
+d0=0;
+tf=1.5;
+t0=-0.5;
+armo=4;
+a=-4;
+b=6;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_03.png" alt=""> <p>Para 15 arm&oacute;nicos:</p><pre class="codeinput">close <span class="string">All</span>
+armo=15;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_04.png" alt=""> <h2 id="8">Problema 3</h2><p><img src="ASySPrac05HugoNogueron_eq06050070497841082409.png" alt="$D_{n}=\frac{sen(\frac{n\pi}{2})}{n\pi}$"></p><pre class="codeinput">close <span class="string">All</span>
+clear <span class="string">All</span>
+u=@(t) (t&gt;=0)&amp;(t&gt;=0);
+f=@(t)(u(t+pi/2)-u(t-pi/2));
+dn=@(n) sin((n*pi)/2)/(n*pi);
+d0=1/2;
+tf=pi;
+t0=-pi;
+armo=4;
+a=-15;
+b=16.5;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_05.png" alt=""> <p>Para 15 arm&oacute;nicos:</p><pre class="codeinput">close <span class="string">All</span>
+armo=15;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_06.png" alt=""> <h2 id="10">Problema 4</h2><p><img src="ASySPrac05HugoNogueron_eq12649296924310738276.png" alt="$D_{n}=\frac{2}{\pi(-4n^2+1)}$"></p><pre class="codeinput">close <span class="string">All</span>
+clear <span class="string">All</span>
+d0=2/pi;
+dn=@(n) 2/(pi*(-4*n^2+1));
+t0=0;
+tf=pi;
+f=@(t) sin(t);
+armo=4;
+a=-7;
+b=9;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_07.png" alt=""> <p>Para 15 arm&oacute;nicos:</p><pre class="codeinput">close <span class="string">All</span>
+armo=15;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_08.png" alt=""> <h2 id="12">Problema 5</h2><p><img src="ASySPrac05HugoNogueron_eq13342404296130274386.png" alt="$D_{n}=\frac{1}{3}$"></p><pre class="codeinput">close <span class="string">All</span>
+clear <span class="string">All</span>
+d0=1/3;
+dn=@(n) 1/(3);
+t0=0;
+tf=3;
+f=@(t) (t==1)*1;
+armo=4;
+a=-7;
+b=7;
+sfc2(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_09.png" alt=""> <p>Para 15 arm&oacute;ncos</p><pre class="codeinput">close <span class="string">All</span>
+armo=15;
+sfc2(t0,tf,dn,d0,f,armo,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_10.png" alt=""> <h2 id="14">Problema 6</h2><p>Para este problema se creo una funci&oacute;n similar a la que se observa en el <i>COMPUTER EXAMPLE C6.2</i> del libro B.P. Lathi, el cual genera la mismas gr&aacute;ficas que en el libro se muestran.</p><pre class="codeinput">close <span class="string">All</span>
+clear <span class="string">All</span>
+dn=@(n) (-12/(n^2*pi^2))*j*(sin(n*pi/2));
+d0=0;
+tf=1.5;
+t0=-0.5;
+a=-3;
+b=3;
+Ex_6_2_Lathi (dn,d0,tf,t0,a,b)
+</pre><img vspace="5" hspace="5" src="ASySPrac05HugoNogueron_11.png" alt=""> <h2 id="15">Problema 7</h2><p>Elabore un c&oacute;digo que implemente el algoritmo de trapecio compuesto para <img src="ASySPrac05HugoNogueron_eq08501079337458606022.png" alt="$n=15$">. Utilice este c&oacute;digo para aproximar <img src="ASySPrac05HugoNogueron_eq15865840780321570647.png" alt="$D_{0},...,D_{4}$"> del ejemplo de la pr&aacute;ctica.  Ahora implemente el c&oacute;digo COMPUTER EXAMPLE C6.4 que se encuentra al final de la secci&oacute;n 6.6 de Lathi, y calcule nuevamente el los coeficientes <img src="ASySPrac05HugoNogueron_eq12452495397822510393.png" alt="$D_{0},...,D{4}$"> del ejemplo propuesto. Muestre una tabla que contenga los coeficientes mencionados calculados con los dos algoritmos y de forma exacta, &iquest;Qu&eacute; algortmo aproxima mejor a los coeficientes?, para esto compare los coefientes con el valor absoluto de la resta.</p><p>El c&oacute;digo no se pudo ejecutar debido a que contiene un error que no pudo ser corregido a tiempo. Por lo que s&oacute;lo se incluye a continuaci&oacute;n.</p><pre class="language-matlab"><span class="keyword">function</span> tabla
+tabl=zeros(16,4);
+dnexacto=@(n) 0.504/(1+4*n*j);
+<span class="keyword">for</span> col=1:6
+<span class="keyword">switch</span> col
+<span class="keyword">case</span> 1
+<span class="keyword">for</span> i=0:15
+tabl(i+1,1)=i;
+<span class="keyword">end</span>
+<span class="keyword">case</span> 2
+<span class="keyword">for</span> ii=0:15
+tabl(ii+1,2)=abs(dnexacto(ii));
+<span class="keyword">end</span>
+<span class="keyword">case</span> 3
+T_0 = pi; N_0 = 256; T = T_0/N_0; t = (0:T:T*(N_0-1))'; M = 10;
+x = exp(-t/2); x(1) = (exp(-pi/2) + 1)/2;
+D_n = fft (x)/N_0; n = [0:15]';
+<span class="keyword">for</span> iii=0:15
+tabl(iii+1,3)=abs(fftshift(D_n));
+<span class="keyword">end</span>
+<span class="keyword">case</span> 4
+m=15000;
+n=(0:4);
+b=pi; a=0; t=-100:.1:100;
+w0=2*pi/(b-a);
+f=@(t) exp(-t/2)*exp(-n*w0*1i*t);
+h=(b-a)/m;
+aprox=f(a)+f(b);
+<span class="keyword">for</span> i=1:m-1
+x=a+i*h;
+aprox=aprox+2*f(x);
+<span class="keyword">for</span> iv=1:16
+aprox=(h/2)*aprox;
+tabl(iv,4)=aprox;
+<span class="keyword">end</span>
+<span class="keyword">end</span>
+<span class="keyword">end</span>
+tabl
+<span class="keyword">end</span>
+</pre><h2 id="17">Ap&eacute;ndices</h2><p>1.</p><pre>function sfct(t0,tf,an,bn,a0,f,armo,a,b)</pre><pre>  % t0 el valor inicial para calcular la serie</pre><pre>  % tf el valor final donde calcular la serie</pre><pre>  % an,bn funci&oacute;n de la f&oacute;rmula de los an y bn</pre><pre>  % f funci&oacute;n original</pre><pre>  % armo n&uacute;mero de armonicos a utilizar en la gr&aacute;fica</pre><pre>  % a, b intevalo para realizar la grafica de la serie</pre><pre>  w0=2*pi/(tf-t0);</pre><pre>  sf=a0;</pre><pre>  t=a:0.0001:b;</pre><pre>  for n=1:armo</pre><pre>      sf=sf+an(n)*cos(n*w0*t)+bn(n)*sin(n*w0*t);</pre><pre>  end</pre><pre>  figure (1)</pre><pre>  hFig = figure(1);</pre><pre>  set(hFig, 'Position', [0 0 900 900])</pre><pre>  subplot(3,2,1)</pre><pre>  plot(t,sf,'LineWidth',2)</pre><pre>  grid on</pre><pre>  legend('Serie de Fourier','Location','Best')</pre><pre>  xlabel('t','FontWeight','bold','FontSize',16)</pre><pre>  sf=a0;</pre><pre>  t1=t0:0.0001:tf;</pre><pre>  for n=1:armo</pre><pre>      sf=sf+an(n)*cos(n*w0*t1)+bn(n)*sin(n*w0*t1);</pre><pre>  end</pre><pre>  subplot(3,2,2)</pre><pre>  plot(t1,f(t1),'r','LineWidth',2)</pre><pre>  grid on</pre><pre>  hold on</pre><pre>  plot(t1,sf,'LineWidth',2)</pre><pre>  legend('Funci&oacute;n original','Serie de Fourier ','Location','Best')</pre><pre>  xlabel('t','FontWeight','bold','FontSize',16)</pre><pre>  nn=-armo:armo;</pre><pre>  axis auto</pre><pre>  subplot(3,2,4)</pre><pre>  e=f(t1)-sf;</pre><pre>  plot(t1,e,'LineWidth',2)</pre><pre>  title('Error','FontWeight','bold','FontSize',16)</pre><pre>  xlabel('t','FontWeight','bold','FontSize',16)</pre><pre>  axis auto</pre><pre>  grid on</pre><pre>  subplot(3,2,6)</pre><pre>  e=f(t1)-sf;</pre><pre>  area(t1,e.^2)</pre><pre>  legend('Energia del error','Location','Best')</pre><pre>  xlabel('t','FontWeight','bold','FontSize',16)</pre><pre>  axis auto</pre><pre>  grid on</pre><pre>  absdn=zeros(1,length(nn));</pre><pre>  cont=1;</pre><pre>  for i =-armo:armo</pre><pre>      if i==0</pre><pre>          absdn(cont)=a0;</pre><pre>      end</pre><pre>      absdn(cont)=an(i)+bn(i);</pre><pre>      cont=cont+1;</pre><pre>  end</pre><pre>  subplot(3,2,3)</pre><pre>  stem(w0*nn,abs(absdn),'LineWidth',2)</pre><pre>  title('Espectro de magnitud C_n ','FontWeight','bold','FontSize',16)</pre><pre>  xlabel('\omega','FontWeight','bold','FontSize',16)</pre><pre>  grid on</pre><pre>  subplot(3,2,5) % %</pre><pre>  stem(w0*nn,angle(absdn),'LineWidth',2) % %</pre><pre>  title('Espectro de fase, \angle de C_n ','FontWeight','bold','FontSize',16) % %</pre><pre>  xlabel('\omega','FontWeight','bold','FontSize',16)</pre><pre>  grid on</pre><pre>  end</pre><h2 id="18">2.</h2><p>function Ex_6_2_Lathi (dn,d0,tf,t0,a,b)</p><pre>  % t0 el valor inicial para calcular la serie tf el valor final donde</pre><pre>  % calcular la serie dn funci&oacute;n de la f&oacute;rmula de los dn a, b intevalo</pre><pre>  % para realizar la grafica de la serie d0 coeficiente D_o</pre><pre>  w0=2*pi/(tf-t0);</pre><pre>  sf=d0;</pre><pre>  t=a:0.01:b;</pre><pre>  armo=0;</pre><pre>  for k=1:9</pre><pre>  for n=1:armo</pre><pre>      sf=sf+dn(-n)*exp(w0*-n*t*j)+dn(n)*exp(w0*n*t*j);</pre><pre>  end</pre><pre>  figure (1)</pre><pre>  hFig = figure(1);</pre><pre>  set(hFig, 'Position', [0 0 900 900])</pre><pre>  subplot(3,3,k)</pre><pre>  plot(t,sf,'LineWidth',2)</pre><pre>  grid on</pre><pre>  legend('Serie de Fourier','Location','Best')</pre><pre>  xlabel('t','FontWeight','bold','FontSize',16)</pre><pre>  sf=d0;</pre><pre>  t1=t0:0.01:tf;</pre><pre>  armo=armo+2;</pre><pre>  end</pre><pre>  end</pre><h2 id="19">Referencias</h2><div><ul><li>B.P. Lathi. Signal and Systems.</li></ul></div><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2019a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%%
+% *INSTITUTO POLITÉCNICO NACIONAL*
+%
+% *UNIDAD PROFESIONAL INTERDISCIPLINARIA EN INGENIERÍA Y TECNOLOGÍAS AVANZADAS*
+%
+% |Análisis de Señales y Sistemas|
+%
+% Autor: Noguerón Soto Hugo de Jesús
+%
+% Profesor: Dr. Rafael Martínez Martínez
+%
+%% Objetivos
+%
+% * Realizar gráficas de series de Fourier exponenciales y trigonométricas en tiempo continuo.
+%
+% * Manipulación de instrucciones en MATLAB.
+%
+% * Calculo númerico de los coeficientes de Fourier.
+%
+%% Introducción
+%
+% En el libro Linear Systems and Signals de B.P. Lathi cap. 6.6. Podemos observar conmo el autor hace una demostración de cómo es posible encontrar los coeficientes 
+% $D_{n}$ de una serie de Foirier compleja de una forma numérica empleando la transformada de Fourier discreta.
+%
+% Tenemos una señal periódica $x(t)$ a la cual le calcularemos su serie de
+% Fourier compleja en un periodo $T_{0}$, tenemos entonces que
+% $N_{0}=\frac{T_{0}}{t}$ elementos en dicho periodo. La relación entre
+% $D_{n}$ y los elementos de $x(t)$ podemos hallarla partiendo de la
+% ecuación: $D_{n}=\frac{1}{T_{0}}\int_{T_{0}}x(t)e^{-jn\omega_{0}t}dt$
+%
+% Podemos reducir a T a valores cercanos a cero, sin embargo nunca a cero.
+% Por lo que podemos deducir la ecuación.
+%
+% % $D_{n}=\frac{1}{N_{0}}\displaystyle\sum_{k=0}^{N_{0}-1}x(kT)e^{-jn\omega_{0}t}$
+%% Desarrolo 
+%% Problema 1
+%
+% $T_{0}=\pi$, $\omega_{0}=2rad/s$
+%
+% $a_{0}=0.504$
+%
+% $a_{n}=0.504(\frac{2}{1+16n^2})$
+%
+% $b_{n}=0.504(\frac{8n}{1+16n^2})$
+a0=0.504;
+an=@(n) 0.504*(2/(1+16*n^2));
+bn=@(n) 0.504*(8*n/(1+16*n^2));
+armo=4;
+a=-7;
+b=9;
+f=@(t) exp(-t/2);
+tf=pi;
+t0=0;
+sfct(t0,tf,an,bn,a0,f,armo,a,b)
+%% 
+% Para 15 armónicos:
+close All
+armo=15;
+sfct(t0,tf,an,bn,a0,f,armo,a,b)
+%% Problema 2
+%
+% $D_{n}=\frac{-12jsen(\frac{n\pi}{2})}{n^2\pi^2}$
+close All 
+clear All
+f=@(t)(heaviside(t+0.5)-heaviside(t-0.5)).*(6.*t)+(heaviside(t-0.5)-heaviside(t-1.5)).*(-6.*t+6);
+dn=@(n) (-12/(n^2*pi^2))*j*(sin(n*pi/2));
+d0=0;
+tf=1.5;
+t0=-0.5;
+armo=4;
+a=-4;
+b=6;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+%% 
+% Para 15 armónicos:
+close All
+armo=15;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+%% Problema 3
+%
+% $D_{n}=\frac{sen(\frac{n\pi}{2})}{n\pi}$
+
+close All
+clear All
+u=@(t) (t>=0)&(t>=0);
+f=@(t)(u(t+pi/2)-u(t-pi/2));
+dn=@(n) sin((n*pi)/2)/(n*pi);
+d0=1/2;
+tf=pi;
+t0=-pi;
+armo=4;
+a=-15;
+b=16.5;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+%% 
+% Para 15 armónicos:
+close All
+armo=15;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+%% Problema 4
+%
+% $D_{n}=\frac{2}{\pi(-4n^2+1)}$
+close All
+clear All
+d0=2/pi;
+dn=@(n) 2/(pi*(-4*n^2+1));
+t0=0;
+tf=pi;
+f=@(t) sin(t);
+armo=4;
+a=-7;
+b=9;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+%% 
+% Para 15 armónicos:
+close All
+armo=15;
+sfc(t0,tf,dn,d0,f,armo,a,b)
+%% Problema 5
+%
+% $D_{n}=\frac{1}{3}$
+close All
+clear All
+d0=1/3;
+dn=@(n) 1/(3);
+t0=0;
+tf=3;
+f=@(t) (t==1)*1;
+armo=4;
+a=-7;
+b=7;
+sfc2(t0,tf,dn,d0,f,armo,a,b)
+%% 
+% Para 15 armóncos
+close All
+armo=15;
+sfc2(t0,tf,dn,d0,f,armo,a,b)
+%% Problema 6
+%
+% Para este problema se creo una función similar a la que se observa en el
+% _COMPUTER EXAMPLE C6.2_ del libro B.P. Lathi, el cual genera la mismas gráficas que en el libro se muestran.
+close All
+clear All
+dn=@(n) (-12/(n^2*pi^2))*j*(sin(n*pi/2));
+d0=0;
+tf=1.5;
+t0=-0.5;
+a=-3;
+b=3;
+Ex_6_2_Lathi (dn,d0,tf,t0,a,b)
+%% Problema 7
+%
+% Elabore un código que implemente el algoritmo de trapecio compuesto para
+% $n=15$. Utilice este código para aproximar $D_{0},...,D_{4}$ del ejemplo
+% de la práctica.  Ahora implemente el código COMPUTER EXAMPLE C6.4 que se
+% encuentra al final de la sección 6.6 de Lathi, y calcule nuevamente el
+% los coeficientes $D_{0},...,D{4}$ del ejemplo propuesto. Muestre una
+% tabla que contenga los coeficientes mencionados calculados con los dos algoritmos 
+% y de forma exacta, ¿Qué algortmo aproxima mejor a los coeficientes?, para esto 
+% compare los coefientes con el valor absoluto de la resta. 
+%
+% El código no se pudo ejecutar debido a que contiene un error que no pudo
+% ser corregido a tiempo. Por lo que sólo se incluye a continuación.
+%%
+%   function tabla
+%   tabl=zeros(16,4);
+%   dnexacto=@(n) 0.504/(1+4*n*j);
+%   for col=1:6
+%   switch col
+%   case 1
+%   for i=0:15
+%   tabl(i+1,1)=i;
+%   end
+%   case 2
+%   for ii=0:15
+%   tabl(ii+1,2)=abs(dnexacto(ii));
+%   end
+%   case 3
+%   T_0 = pi; N_0 = 256; T = T_0/N_0; t = (0:T:T*(N_0-1))'; M = 10;
+%   x = exp(-t/2); x(1) = (exp(-pi/2) + 1)/2;
+%   D_n = fft (x)/N_0; n = [0:15]';
+%   for iii=0:15
+%   tabl(iii+1,3)=abs(fftshift(D_n));
+%   end
+%   case 4
+%   m=15000;
+%   n=(0:4);
+%   b=pi; a=0; t=-100:.1:100;
+%   w0=2*pi/(b-a);
+%   f=@(t) exp(-t/2)*exp(-n*w0*1i*t); 
+%   h=(b-a)/m; 
+%   aprox=f(a)+f(b);
+%   for i=1:m-1
+%   x=a+i*h;
+%   aprox=aprox+2*f(x);
+%   for iv=1:16
+%   aprox=(h/2)*aprox;
+%   tabl(iv,4)=aprox;
+%   end
+%   end
+%   end
+%   tabl
+%   end
+ %% Apéndices 
+ %
+ % 1.
+ %
+%  function sfct(t0,tf,an,bn,a0,f,armo,a,b)
+%
+%    % t0 el valor inicial para calcular la serie
+%
+%    % tf el valor final donde calcular la serie
+%
+%    % an,bn función de la fórmula de los an y bn
+%
+%    % f función original
+%
+%    % armo número de armonicos a utilizar en la gráfica
+%
+%    % a, b intevalo para realizar la grafica de la serie
+%
+%    w0=2*pi/(tf-t0);
+%
+%    sf=a0;
+%
+%    t=a:0.0001:b;
+%
+%    for n=1:armo
+%
+%        sf=sf+an(n)*cos(n*w0*t)+bn(n)*sin(n*w0*t);
+%
+%    end
+%
+%    figure (1)
+%
+%    hFig = figure(1);
+%
+%    set(hFig, 'Position', [0 0 900 900])
+%
+%    subplot(3,2,1)
+%
+%    plot(t,sf,'LineWidth',2)
+%
+%    grid on
+%
+%    legend('Serie de Fourier','Location','Best')
+%
+%    xlabel('t','FontWeight','bold','FontSize',16)
+%
+%    sf=a0;
+%
+%    t1=t0:0.0001:tf;
+%
+%    for n=1:armo
+%
+%        sf=sf+an(n)*cos(n*w0*t1)+bn(n)*sin(n*w0*t1);
+%
+%    end
+%
+%    subplot(3,2,2)
+%
+%    plot(t1,f(t1),'r','LineWidth',2)
+%
+%    grid on
+%
+%    hold on
+%
+%    plot(t1,sf,'LineWidth',2)
+%
+%    legend('Función original','Serie de Fourier ','Location','Best')
+%
+%    xlabel('t','FontWeight','bold','FontSize',16)
+%
+%    nn=-armo:armo;
+%
+%    axis auto
+%
+%    subplot(3,2,4)
+%
+%    e=f(t1)-sf;
+%
+%    plot(t1,e,'LineWidth',2)
+%
+%    title('Error','FontWeight','bold','FontSize',16)
+%
+%    xlabel('t','FontWeight','bold','FontSize',16)
+%
+%    axis auto
+%
+%    grid on
+%
+%    subplot(3,2,6)
+%
+%    e=f(t1)-sf;
+%
+%    area(t1,e.^2)
+%
+%    legend('Energia del error','Location','Best')
+%
+%    xlabel('t','FontWeight','bold','FontSize',16)
+%
+%    axis auto
+%
+%    grid on
+%
+%    absdn=zeros(1,length(nn));
+%
+%    cont=1;
+%
+%    for i =-armo:armo
+%
+%        if i==0
+%
+%            absdn(cont)=a0;
+%
+%        end
+%
+%        absdn(cont)=an(i)+bn(i);
+%
+%        cont=cont+1;
+%
+%    end
+%
+%    subplot(3,2,3)
+%
+%    stem(w0*nn,abs(absdn),'LineWidth',2)
+%
+%    title('Espectro de magnitud C_n ','FontWeight','bold','FontSize',16)
+%
+%    xlabel('\omega','FontWeight','bold','FontSize',16)
+%
+%    grid on
+%
+%    subplot(3,2,5) % %
+%
+%    stem(w0*nn,angle(absdn),'LineWidth',2) % %
+%
+%    title('Espectro de fase, \angle de C_n ','FontWeight','bold','FontSize',16) % %
+%
+%    xlabel('\omega','FontWeight','bold','FontSize',16)
+%
+%    grid on
+%
+%    end
+%% 2.
+%
+% function Ex_6_2_Lathi (dn,d0,tf,t0,a,b)
+%
+%    % t0 el valor inicial para calcular la serie tf el valor final donde
+%
+%    % calcular la serie dn función de la fórmula de los dn a, b intevalo
+%
+%    % para realizar la grafica de la serie d0 coeficiente D_o
+%
+%    w0=2*pi/(tf-t0);
+%
+%    sf=d0;
+%
+%    t=a:0.01:b;
+%
+%    armo=0;
+%
+%    for k=1:9
+%
+%    for n=1:armo
+%
+%        sf=sf+dn(-n)*exp(w0*-n*t*j)+dn(n)*exp(w0*n*t*j);
+%
+%    end
+%
+%    figure (1)
+%
+%    hFig = figure(1);
+%
+%    set(hFig, 'Position', [0 0 900 900])
+%
+%    subplot(3,3,k)
+%
+%    plot(t,sf,'LineWidth',2)
+%
+%    grid on
+%
+%    legend('Serie de Fourier','Location','Best')
+%
+%    xlabel('t','FontWeight','bold','FontSize',16)
+%
+%    sf=d0;
+%
+%    t1=t0:0.01:tf;
+%
+%    armo=armo+2;
+%
+%    end
+%
+%    end
+%% Referencias
+%
+% * B.P. Lathi. Signal and Systems. 
+##### SOURCE END #####
+--></body></html>
